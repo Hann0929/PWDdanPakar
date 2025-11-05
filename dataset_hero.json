@@ -1,0 +1,65 @@
+[
+  {
+    "hero": "Layla",
+    "role": "Marksman",
+    "counters": [
+      {
+        "role": "Assassin",
+        "value": 1.0,
+        "reason": "Assassin memiliki mobilitas tinggi dan burst damage besar yang mampu menembus pertahanan Layla dengan mudah."
+      },
+      {
+        "role": "Tank",
+        "value": 0.5,
+        "reason": "Tank bisa menahan serangan Layla, tetapi tidak cukup cepat untuk menutup jarak tanpa bantuan tim."
+      },
+      {
+        "role": "Mage",
+        "value": 0.2,
+        "reason": "Mage bisa dilawan jika Layla menjaga jarak dan memanfaatkan range serangannya."
+      }
+    ]
+  },
+  {
+    "hero": "Gusion",
+    "role": "Assassin",
+    "counters": [
+      {
+        "role": "Tank",
+        "value": 0.9,
+        "reason": "Tank sulit dibunuh oleh Gusion karena memiliki HP besar dan efek crowd control yang bisa mengunci gerakannya."
+      },
+      {
+        "role": "Fighter",
+        "value": 0.6,
+        "reason": "Fighter dapat melawan balik dengan sustain tinggi jika Gusion gagal menghabisi dalam satu kombo."
+      },
+      {
+        "role": "Marksman",
+        "value": 0.3,
+        "reason": "Marksman rentan terhadap Assassin, tetapi bisa menang jika memiliki positioning yang baik dan dukungan tim."
+      }
+    ]
+  },
+  {
+    "hero": "Franco",
+    "role": "Tank",
+    "counters": [
+      {
+        "role": "Marksman",
+        "value": 0.8,
+        "reason": "Franco dapat menarik Marksman keluar dari posisi aman dan memberikan peluang eliminasi cepat."
+      },
+      {
+        "role": "Assassin",
+        "value": 0.4,
+        "reason": "Assassin dapat menghindar dari hook Franco dengan skill dash, membuatnya sulit ditangkap."
+      },
+      {
+        "role": "Mage",
+        "value": 0.2,
+        "reason": "Mage dengan area damage bisa menyerang Franco dari jauh tanpa mudah tertangkap."
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+<body>
+  <div class="overlay"></div>
+  <link rel="stylesheet" href="diagnosa.css">
+  <!-- 🔹 Tombol kembali di pojok kiri atas -->
+  <button class="top-back-btn" onclick="goBack()">⬅️ Kembali ke Halaman Utama</button>
+
+  <div class="container">
+    <img src="mlbb_logo.png" alt="MLBB Logo" class="logo">
+
+    <h1>🧠 Sistem Pakar Counter Hero MLBB</h1>
+    <p class="subtitle">Temukan counter terbaik untuk setiap hero Mobile Legends!</p>
+
+    <label for="heroSelect">Pilih Hero:</label>
+    <select id="heroSelect">
+      <option value="">-- Pilih Hero --</option>
+    </select>
+
+    <button id="analyzeBtn">Analisis Counter</button>
+
+    <div id="result" class="result-box"></div>
+  </div>
+  
+  <script src="Herodata.js"></script>
+  <script>
+    function goBack() {
+      window.location.href = "index.html"; 
+    }
+  </script>
+</body>
