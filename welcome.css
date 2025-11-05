@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: radial-gradient(circle at top, #0a1f44, #010a1a);
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(10, 25, 60, 0.85);
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid #00b4d8;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #00b4d8;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+}
+
+.navbar ul li a {
+  color: #b3e8ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #00d4ff;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90vh;
+  padding: 0 100px;
+  background: url('OIP.jpg') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 10, 40, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  animation: fadeInUp 1.5s ease;
+}
+
+.content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #00d4ff;
+  text-shadow: 0 0 15px #00b4d8;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 18px;
+  color: #b3e8ff;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  padding: 12px 28px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00b4d8;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #0096c7, #48cae4);
+  transform: scale(1.05);
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+
+.image img {
+  width: 480px;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 30px #00d4ff);
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #001830;
+  color: #b3e8ff;
+  border-top: 1px solid #0077b6;
+  font-size: 14px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
