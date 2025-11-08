@@ -3,7 +3,6 @@
 /* === STYLE DASAR HALAMAN === */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Orbitron', sans-serif;
   color: #fff;
   background: linear-gradient(180deg, #020b24 0%, #021a35 100%);
@@ -11,173 +10,180 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  animation: fadeIn 1s ease-in-out;
-  position: relative;
+  overflow-x: hidden;
 }
 
-/* === LAPISAN TRANSPARAN === */
+/* === OVERLAY HALUS === */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(5, 10, 30, 0.85);
-  backdrop-filter: blur(4px);
-  z-index: 1;
+  background: rgba(0, 10, 30, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: -1;
 }
 
-/* === KONTEN UTAMA === */
+/* === KONTENER UTAMA === */
 .container {
-  position: relative;
-  z-index: 2;
   text-align: center;
-  background: rgba(10, 20, 40, 0.9);
-  border: 2px solid #00bfff;
-  box-shadow: 0 0 25px rgba(0, 191, 255, 0.8);
-  border-radius: 20px;
-  padding: 40px;
-  width: 430px;
-  color: #e6f7ff;
-  animation: slideUp 0.8s ease-out;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* === LOGO & TEKS === */
-.logo {
-  width: 150px;
-  margin-bottom: 15px;
-  filter: drop-shadow(0 0 12px #00bfff);
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #00d9ff;
-  text-shadow: 0 0 15px #00bfff, 0 0 25px rgba(0, 217, 255, 0.7);
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #b8c6ff;
-  font-size: 13px;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-}
-
-/* === FORM PILIHAN HERO === */
-label {
-  display: block;
-  margin: 10px 0 8px;
-  font-size: 15px;
-  color: #00eaff;
-  text-shadow: 0 0 6px #00d9ff;
-}
-
-select, button {
-  width: 80%;
-  padding: 10px;
+/* === SELECT DAN TOMBOL === */
+select, .btn {
+  padding: 12px 25px;
   border-radius: 10px;
-  border: 2px solid #00d9ff;
-  font-size: 15px;
-  background-color: rgba(10, 10, 30, 0.7);
-  color: #00eaff;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  transition: 0.3s;
-  text-align: center;
-}
-
-select:hover, button:hover {
-  box-shadow: 0 0 12px #00eaff;
-}
-
-button {
-  background: linear-gradient(90deg, #00bfff, #00ffff);
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  text-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
-}
-
-/* === KOTAK HASIL DIAGNOSA === */
-.result-box {
-  text-align: left;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 15px;
-  font-size: 14px;
-  line-height: 1.6;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
-}
-
-.result-box h2 {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00bfff, 0 0 25px rgba(0,255,255,0.7);
-}
-
-/* === AREA NAVIGASI ATAS (TOMBOL KEMBALI & INFORMASI) === */
-.top-nav {
-  position: fixed;
-  top: 15px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 25px;
-  z-index: 9999;
-}
-
-.top-back-btn, .top-info-btn {
-  background: linear-gradient(90deg, #00bfff, #00ffff);
-  color: #000;
   border: none;
-  border-radius: 10px;
-  padding: 6px 7px; 
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  font-size: 16px;
+  margin: 10px;
+  background-color: rgba(255,255,255,0.1);
+  color: #fff;
+  outline: none;
   transition: all 0.3s ease;
-  font-family: 'Orbitron', sans-serif;
+}
+
+select:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.btn {
+  background: linear-gradient(90deg, #007bff, #00bfff);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,191,255,0.5);
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #0099cc, #00eaff);
+  transform: scale(1.05);
+}
+
+/* === HASIL DIAGNOSA === */
+.result-box {
+  margin-top: 40px;
+  padding: 25px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 15px;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0,191,255,0.2);
+  animation: fadeUp 1s ease-out;
+}
+
+/* === SETIAP ITEM COUNTER === */
+.counter-item {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.counter-item h3 {
+  color: #00eaff;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-.top-back-btn:hover, .top-info-btn:hover {
-  background: linear-gradient(90deg, #00ffff, #00bfff);
-  transform: scale(1.07);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+/* === PROGRESS BAR === */
+.progress-bar {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  height: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 8px 0 12px 0;
 }
 
-/* === RESPONSIF UNTUK LAYAR KECIL === */
-@media (max-width: 480px) {
-  .top-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+.progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+  box-shadow: 0 0 10px currentColor;
+}
 
-  .top-back-btn, .top-info-btn {
-    width: 70%;
-    font-size: 11px;
-    padding: 6px 10px;
-  }
+/* === TEKS KEPERCAYAAN === */
+.confidence {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* === PESAN PERINGATAN === */
+.warning {
+  color: #FFD700;
+  font-style: italic;
+  text-align: center;
+  animation: pulse 1s infinite;
 }
 
 /* === ANIMASI === */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
+  from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* === TOMBOL NAVIGASI ATAS === */
+.top-nav {
+  position: fixed;
+  top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 10;
+}
+
+.top-back-btn, .top-info-btn {
+  background: rgba(0, 191, 255, 0.2);
+  border: 1px solid #00bfff;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.top-back-btn:hover, .top-info-btn:hover {
+  background: #00bfff;
+  transform: scale(1.05);
+}
+/* === Efek warna cerah saat memilih hero === */
+select {
+  background-color: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 1px solid transparent;
+  transition: 0.4s ease;
+}
+
+/* Saat select diklik / fokus */
+select:focus {
+  background-color: rgba(0,255,255,0.35);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 15px 4px rgba(0,255,255,0.7);
+  color: #fff;
+}
+
+/* Saat hero sudah dipilih */
+select.filled {
+  background-color: rgba(0,255,255,0.4);
+  border: 1px solid #00ffff;
+  color: #ffffff;
+  box-shadow: 0 0 20px 6px rgba(0,255,255,0.8);
+  text-shadow: 0 0 8px #00ffff;
+}
+
+

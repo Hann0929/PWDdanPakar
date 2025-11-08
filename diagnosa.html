@@ -1,36 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnosa Counter Hero | MLBB Expert</title>
+  <link rel="stylesheet" href="diagnosa.css" />
+  <script defer src="diagnosa.js"></script>
+</head>
 <body>
   <div class="overlay"></div>
-  <link rel="stylesheet" href="diagnosa.css">
 
-  <!-- 🔹 Navigasi Atas -->
+  <!-- 🔹 Navigasi -->
   <div class="top-nav">
     <button class="top-back-btn" onclick="goBack()">⬅️ Kembali</button>
     <button class="top-info-btn" onclick="goInfo()">ℹ️ Informasi</button>
   </div>
 
   <div class="container">
-    <img src="mlbb_logo.png" alt="MLBB Logo" class="logo">
-    <h1> Sistem Pakar Counter Hero MLBB</h1>
-    <p class="subtitle">Temukan counter terbaik untuk setiap hero Mobile Legends!</p>
+    <h1>🔍 Diagnosa Counter Hero MLBB</h1>
+    <p>Pilih hero kamu, lalu sistem akan menampilkan hero counter dengan tingkat kepercayaan (0.2 - 1.0)</p>
 
-    <label for="heroSelect">Pilih Hero:</label>
+    <!-- 🔹 Form Pilihan Hero -->
     <select id="heroSelect">
       <option value="">-- Pilih Hero --</option>
+      <option value="Layla">Layla</option>
+      <option value="Gusion">Gusion</option>
+      <option value="Franco">Franco</option>
     </select>
 
-    <button id="analyzeBtn">Analisis Counter</button>
+    <button class="btn" onclick="diagnoseHero()">Mulai Analisis</button>
 
+    <!-- 🔹 Hasil Diagnosa -->
     <div id="result" class="result-box"></div>
   </div>
-  
-  <script src="Herodata.js"></script>
-  <script>
-    function goBack() {
-      window.location.href = "index.html";
-    }
-
-    function goInfo() {
-      window.location.href = "informasi.html";
-    }
-  </script>
 </body>
+</html>
