@@ -10,7 +10,6 @@
 <body>
   <div class="overlay"></div>
 
-  <!-- 🔹 Navigasi -->
   <div class="top-nav">
     <button class="top-back-btn" onclick="goBack()">⬅️ Kembali</button>
     <button class="top-info-btn" onclick="goInfo()">ℹ️ Informasi</button>
@@ -18,9 +17,8 @@
 
   <div class="container">
     <h1>🔍 Diagnosa Counter Hero MLBB</h1>
-    <p>Pilih hero kamu, lalu sistem akan menampilkan hero counter dengan tingkat kepercayaan (0.2 - 1.0)</p>
+    <p>Pilih hero kamu, lalu sistem akan menampilkan hero counter dengan tingkat kepercayaan </p>
 
-    <!-- 🔹 Form Pilihan Hero -->
     <select id="heroSelect">
       <option value="">-- Pilih Hero --</option>
       <option value="Layla">Layla</option>
@@ -30,7 +28,6 @@
 
     <button class="btn" onclick="diagnoseHero()">Mulai Analisis</button>
 
-    <!-- 🔹 Hasil Diagnosa -->
     <div id="result" class="result-box"></div>
   </div>
 </body>

@@ -12,7 +12,7 @@ fetch("data.json")
       <option value="">⚠️ Data gagal dimuat</option>
     `;
   });
-  // 🔹 Efek warna saat hero dipilih
+
 document.addEventListener("DOMContentLoaded", function() {
   const heroSelect = document.getElementById("heroSelect");
   heroSelect.addEventListener("change", function() {
@@ -35,8 +35,7 @@ function populateHeroSelect(data) {
     select.appendChild(option);
   });
 }
-
-// 🔹 Fungsi utama diagnosa
+//fungsion
 function diagnoseHero() {
   const heroName = document.getElementById("heroSelect").value;
   const resultBox = document.getElementById("result");
@@ -82,7 +81,6 @@ function diagnoseHero() {
   resultBox.innerHTML = html;
 }
 
-// 🔹 Navigasi
 function goBack() {
   window.location.href = "index.html";
 }

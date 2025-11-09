@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
 
-/* === STYLE DASAR HALAMAN === */
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
@@ -13,7 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-/* === OVERLAY HALUS === */
 .overlay {
   position: fixed;
   top: 0;
@@ -25,7 +23,6 @@ body {
   z-index: -1;
 }
 
-/* === KONTENER UTAMA === */
 .container {
   text-align: center;
   padding: 60px 20px;
@@ -34,7 +31,6 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 
-/* === SELECT DAN TOMBOL === */
 select, .btn {
   padding: 12px 25px;
   border-radius: 10px;
@@ -63,7 +59,6 @@ select:hover {
   transform: scale(1.05);
 }
 
-/* === HASIL DIAGNOSA === */
 .result-box {
   margin-top: 40px;
   padding: 25px;
@@ -74,7 +69,6 @@ select:hover {
   animation: fadeUp 1s ease-out;
 }
 
-/* === SETIAP ITEM COUNTER === */
 .counter-item {
   border-bottom: 1px solid rgba(255,255,255,0.1);
   margin-bottom: 20px;
@@ -87,7 +81,6 @@ select:hover {
   text-transform: uppercase;
 }
 
-/* === PROGRESS BAR === */
 .progress-bar {
   width: 100%;
   background: rgba(255,255,255,0.1);
@@ -105,13 +98,11 @@ select:hover {
   box-shadow: 0 0 10px currentColor;
 }
 
-/* === TEKS KEPERCAYAAN === */
 .confidence {
   font-size: 14px;
   font-weight: bold;
 }
 
-/* === PESAN PERINGATAN === */
 .warning {
   color: #FFD700;
   font-style: italic;
@@ -119,7 +110,6 @@ select:hover {
   animation: pulse 1s infinite;
 }
 
-/* === ANIMASI === */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -135,7 +125,6 @@ select:hover {
   50% { opacity: 0.5; }
 }
 
-/* === TOMBOL NAVIGASI ATAS === */
 .top-nav {
   position: fixed;
   top: 15px;
@@ -161,7 +150,7 @@ select:hover {
   background: #00bfff;
   transform: scale(1.05);
 }
-/* === Efek warna cerah saat memilih hero === */
+
 select {
   background-color: rgba(255,255,255,0.15);
   color: #fff;
@@ -169,7 +158,6 @@ select {
   transition: 0.4s ease;
 }
 
-/* Saat select diklik / fokus */
 select:focus {
   background-color: rgba(0,255,255,0.35);
   border: 1px solid #00ffff;
@@ -177,7 +165,6 @@ select:focus {
   color: #fff;
 }
 
-/* Saat hero sudah dipilih */
 select.filled {
   background-color: rgba(0,255,255,0.4);
   border: 1px solid #00ffff;
