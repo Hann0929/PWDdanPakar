@@ -145,3 +145,75 @@ footer {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
+/* === SECTION TENTANG BUILD (FIX PRIORITY) === */
+section.about-section {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0,10,25,0.95), rgba(0,25,50,0.9));
+  color: #b3e8ff !important;
+  padding: 80px 100px;
+  text-align: center;
+  border-top: 2px solid #00b4d8;
+  border-bottom: 2px solid #00b4d8;
+  box-shadow: 0 0 25px rgba(0, 180, 216, 0.3);
+  margin-top: 0;
+  overflow: hidden;
+}
+
+section.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0, 80, 150, 0.2), transparent);
+  z-index: -1;
+}
+
+section.about-section h2 {
+  font-size: 2rem;
+  color: #00d4ff !important;
+  text-shadow: 0 0 15px #00b4d8;
+  margin-bottom: 50px;
+}
+
+section.about-section .about-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  text-align: left;
+}
+
+section.about-section .about-content div {
+  flex: 1;
+  background: rgba(0, 15, 30, 0.8);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 180, 216, 0.15);
+  transition: 0.3s;
+}
+
+section.about-section .about-content div:hover {
+  box-shadow: 0 0 25px rgba(0, 180, 216, 0.4);
+  transform: translateY(-5px);
+}
+
+section.about-section .about-content h3 {
+  font-size: 1.3rem;
+  color: #00b4d8;
+  margin-bottom: 15px;
+}
+
+section.about-section .about-content p {
+  line-height: 1.7;
+  font-size: 0.95rem;
+  color: #b3e8ff;
+}
+
+@media (max-width: 768px) {
+  section.about-section .about-content {
+    flex-direction: column;
+  }
+  section.about-section {
+    padding: 60px 30px;
+  }
+}
+
