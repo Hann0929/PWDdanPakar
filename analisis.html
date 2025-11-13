@@ -3,32 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diagnosa Counter Hero | MLBB Expert</title>
+  <title>🔍 Analisis Counter Hero MLBB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="analisis.css" />
-  <script defer src="analisis.js"></script>
 </head>
 <body>
   <div class="overlay"></div>
 
+  <!-- 🔹 Navigasi -->
   <div class="top-nav">
     <button class="top-back-btn" onclick="goBack()">⬅️ Kembali</button>
-    <button class="top-info-btn" onclick="goInfo()">ℹ️ Informasi</button>
+    <h1>🔍 Analisis Counter Hero MLBB</h1>
   </div>
 
-  <div class="container">
-    <h1>🔍 Analisis Counter Hero MLBB</h1>
-    <p>Pilih hero kamu, lalu sistem akan menampilkan hero counter dengan tingkat kepercayaan </p>
+  <!-- 🔹 Deskripsi -->
+  <p class="desc">Pilih hero kamu dan filter rank untuk melihat hero counter yang sesuai dengan tingkat permainan.</p>
 
+  <!-- 🔹 Area Pemilihan -->
+  <div class="selection-area">
     <select id="heroSelect">
       <option value="">-- Pilih Hero --</option>
-      <option value="Layla">Layla</option>
-      <option value="Gusion">Gusion</option>
-      <option value="Franco">Franco</option>
+      <option>Alucard</option>
+      <option>Miya</option>
+      <option>Gusion</option>
+      <option>Chou</option>
+      <option>Lancelot</option>
     </select>
 
-    <button class="btn" onclick="diagnoseHero()">Mulai Analisis</button>
+    <select id="rankFilter">
+      <option value="semua">Semuа</option>
+      <option value="epic">Epic</option>
+      <option value="legend">Legend</option>
+      <option value="mythic">Mythic</option>
+      <option value="honor">Mythical Honor</option>
+      <option value="glory">Mythical Glory+</option>
+    </select>
 
-    <div id="result" class="result-box"></div>
+    <button id="analyzeBtn">Mulai Analisis</button>
   </div>
+
+  <!-- 🔹 Hasil Analisis -->
+  <div id="resultArea" class="hero-grid"></div>
+
+  <script src="analisis.js"></script>
 </body>
 </html>

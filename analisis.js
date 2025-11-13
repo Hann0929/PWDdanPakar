@@ -1,90 +1,42 @@
-let dataset = [];
+const heroes = [
+  { name: "Chou", role: "Fighter", rank: "epic", counterTo: ["Alucard", "Miya"], img: "https://upload.wikimedia.org/wikipedia/en/f/f7/Chou_Mobile_Legends.png" },
+  { name: "Khufra", role: "Tank", rank: "legend", counterTo: ["Gusion", "Lancelot"], img: "https://upload.wikimedia.org/wikipedia/en/2/23/Khufra_Mobile_Legends.png" },
+  { name: "Saber", role: "Assassin", rank: "mythic", counterTo: ["Gusion", "Harley"], img: "https://upload.wikimedia.org/wikipedia/en/e/e2/Saber_Mobile_Legends.png" },
+  { name: "Minsitthar", role: "Fighter", rank: "honor", counterTo: ["Lancelot"], img: "https://upload.wikimedia.org/wikipedia/en/9/9f/Minsitthar_Mobile_Legends.png" },
+  { name: "Franco", role: "Tank", rank: "glory", counterTo: ["Alucard", "Miya"], img: "https://upload.wikimedia.org/wikipedia/en/1/1f/Franco_Mobile_Legends.png" },
+];
 
-fetch("data.json")
-  .then(response => response.json())
-  .then(data => {
-    dataset = data;
-    populateHeroSelect(data);
-  })
-  .catch(error => {
-    console.error("Gagal memuat data.json:", error);
-    document.getElementById("heroSelect").innerHTML = `
-      <option value="">⚠️ Data gagal dimuat</option>
-    `;
-  });
+// 🔹 Tombol Analisis
+document.getElementById("analyzeBtn").addEventListener("click", () => {
+  const selectedHero = document.getElementById("heroSelect").value;
+  const selectedRank = document.getElementById("rankFilter").value;
+  const resultArea = document.getElementById("resultArea");
 
-document.addEventListener("DOMContentLoaded", function() {
-  const heroSelect = document.getElementById("heroSelect");
-  heroSelect.addEventListener("change", function() {
-    if (this.value) {
-      this.classList.add("filled");
-    } else {
-      this.classList.remove("filled");
-    }
-  });
+  if (!selectedHero) {
+    resultArea.innerHTML = `<p style="color:#0ef;">⚠️ Silakan pilih hero terlebih dahulu.</p>`;
+    return;
+  }
+
+  // 🔸 Filter berdasarkan hero dan rank
+  let counters = heroes.filter(h => h.counterTo.includes(selectedHero));
+  if (selectedRank !== "semua") counters = counters.filter(h => h.rank === selectedRank);
+
+  // 🔸 Tampilkan hasil
+  if (counters.length === 0) {
+    resultArea.innerHTML = `<p style="color:#f55;">❌ Tidak ditemukan hero counter untuk rank tersebut.</p>`;
+    return;
+  }
+
+  resultArea.innerHTML = counters.map(hero => `
+    <div class="hero-card">
+      <img src="${hero.img}" alt="${hero.name}" />
+      <h3>${hero.name}</h3>
+      <p>${hero.role} - Rank: ${hero.rank.toUpperCase()}</p>
+    </div>
+  `).join('');
 });
 
-
-function populateHeroSelect(data) {
-  const select = document.getElementById("heroSelect");
-  select.innerHTML = `<option value="">-- Pilih Hero --</option>`;
-  data.forEach(hero => {
-    const option = document.createElement("option");
-    option.value = hero.hero;
-    option.textContent = hero.hero;
-    select.appendChild(option);
-  });
-}
-//fungsion
-function diagnoseHero() {
-  const heroName = document.getElementById("heroSelect").value;
-  const resultBox = document.getElementById("result");
-
-  if (!heroName) {
-    resultBox.innerHTML = "<p class='warning'>⚠️ Silakan pilih hero terlebih dahulu!</p>";
-    return;
-  }
-
-  const heroData = dataset.find(h => h.hero === heroName);
-  if (!heroData) {
-    resultBox.innerHTML = "<p>Data tidak ditemukan.</p>";
-    return;
-  }
-
-  let html = `
-    <h2>Hasil Diagnosa untuk ${heroData.hero}</h2>
-    <p><strong>Role:</strong> ${heroData.role}</p>
-    <div class="counter-list">
-  `;
-
-  heroData.counters.forEach(counter => {
-    const percent = (counter.value * 100).toFixed(0);
-    const confidenceColor =
-      counter.value >= 0.8 ? "#00FF99" :
-      counter.value >= 0.5 ? "#FFD700" : "#FF6666";
-
-    html += `
-      <div class="counter-item">
-        <h3>${counter.role}</h3>
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:${percent}%; background:${confidenceColor};"></div>
-        </div>
-        <p class="confidence" style="color:${confidenceColor}">
-          Tingkat Kepercayaan: ${percent}%
-        </p>
-        <p>${counter.reason}</p>
-      </div>
-    `;
-  });
-
-  html += `</div>`;
-  resultBox.innerHTML = html;
-}
-
+// 🔹 Tombol Kembali
 function goBack() {
-  window.location.href = "index.html";
-}
-
-function goInfo() {
-  window.location.href = "info.html";
+  window.history.back();
 }
