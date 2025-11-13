@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnosa Counter Hero | MLBB Expert</title>
+  <link rel="stylesheet" href="analisis.css" />
+  <script defer src="analisis.js"></script>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="top-nav">
+    <button class="top-back-btn" onclick="goBack()">⬅️ Kembali</button>
+    <button class="top-info-btn" onclick="goInfo()">ℹ️ Informasi</button>
+  </div>
+
+  <div class="container">
+    <h1>🔍 Analisis Counter Hero MLBB</h1>
+    <p>Pilih hero kamu, lalu sistem akan menampilkan hero counter dengan tingkat kepercayaan </p>
+
+    <select id="heroSelect">
+      <option value="">-- Pilih Hero --</option>
+      <option value="Layla">Layla</option>
+      <option value="Gusion">Gusion</option>
+      <option value="Franco">Franco</option>
+    </select>
+
+    <button class="btn" onclick="diagnoseHero()">Mulai Analisis</button>
+
+    <div id="result" class="result-box"></div>
+  </div>
+</body>
+</html>

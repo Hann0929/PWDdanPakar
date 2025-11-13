@@ -3,32 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diagnosa Counter Hero | MLBB Expert</title>
+  <title>Diagnosa Hero MLBB</title>
   <link rel="stylesheet" href="diagnosa.css" />
-  <script defer src="diagnosa.js"></script>
 </head>
 <body>
-  <div class="overlay"></div>
+  <header>
+    <div class="logo">
+      <img src="mlbb_logo.png" alt="Logo">
+      <h2>MLBB Expert</h2>
+    </div>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="analisis.html">Analisis</a>
+      <a href="diagnosa.html" class="active">Diagnosa</a>
+      <a href="#">Informasi</a>
+    </nav>
+  </header>
 
-  <div class="top-nav">
-    <button class="top-back-btn" onclick="goBack()">⬅️ Kembali</button>
-    <button class="top-info-btn" onclick="goInfo()">ℹ️ Informasi</button>
-  </div>
+  <section class="diagnosa-container">
+    <h2>🧠 Diagnosa Hero yang Cocok</h2>
+    <form id="diagnosaForm">
+      <label>1️⃣ Seberapa tinggi Physical Attack yang kamu inginkan? (1-10)</label>
+      <input type="number" id="physicalAtt" min="1" max="10" required>
 
-  <div class="container">
-    <h1>🔍 Analisis Counter Hero MLBB</h1>
-    <p>Pilih hero kamu, lalu sistem akan menampilkan hero counter dengan tingkat kepercayaan </p>
+      <label>2️⃣ Seberapa tinggi Physical Defense? (1-10)</label>
+      <input type="number" id="physicalDef" min="1" max="10" required>
 
-    <select id="heroSelect">
-      <option value="">-- Pilih Hero --</option>
-      <option value="Layla">Layla</option>
-      <option value="Gusion">Gusion</option>
-      <option value="Franco">Franco</option>
-    </select>
+      <label>3️⃣ Seberapa tinggi Magic Power?</label>
+      <input type="number" id="magicPower" min="1" max="10" required>
 
-    <button class="btn" onclick="diagnoseHero()">Mulai Analisis</button>
+      <label>4️⃣ Seberapa tinggi Magic Defense?</label>
+      <input type="number" id="magicDef" min="1" max="10" required>
 
-    <div id="result" class="result-box"></div>
-  </div>
+      <label>5️⃣ Seberapa besar HP yang kamu inginkan?</label>
+      <input type="number" id="hp" min="1" max="10" required>
+
+      <label>6️⃣ Seberapa cepat Movement Speed?</label>
+      <input type="number" id="moveSpeed" min="1" max="10" required>
+
+      <label>7️⃣ Seberapa penting Critical Chance?</label>
+      <input type="number" id="critChance" min="1" max="10" required>
+
+      <label>8️⃣ Seberapa besar Critical Damage yang kamu inginkan?</label>
+      <input type="number" id="critDmg" min="1" max="10" required>
+
+      <button type="submit" class="btn">Lihat Rekomendasi Hero</button>
+    </form>
+
+    <div id="hasil"></div>
+  </section>
+
+  <footer>
+    © 2025 Counter Hero MLBB | Johan Hidayat
+  </footer>
+
+  <script src="diagnosa.js"></script>
 </body>
 </html>
