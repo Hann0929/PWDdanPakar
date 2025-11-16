@@ -1,50 +1,43 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🔍 Analisis Counter Hero MLBB</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/analisis.css" />
-</head>
-<body>
-  <div class="overlay"></div>
+<link rel="stylesheet" href="../css/analisis.css">
+<div class="hero-container">
+    <button class="nav-btn left" onclick="prevHero()">&#10094;</button>
 
-  <!-- 🔹 Navigasi -->
-  <div class="top-nav">
-    <button class="top-back-btn" onclick="goBack()">⬅️ Kembali</button>
-    <h1>🔍 Analisis Counter Hero MLBB</h1>
-  </div>
+    <div class="hero-display">
+        <img id="heroImg" src="" alt="Hero Image">
 
-  <!-- 🔹 Deskripsi -->
-  <p class="desc">Pilih hero kamu dan filter rank untuk melihat hero counter yang sesuai dengan tingkat permainan.</p>
+        <div class="hero-info">
+            <h1 id="heroName"></h1>
+            <h3 id="heroRole"></h3>
 
-  <!-- 🔹 Area Pemilihan -->
-  <div class="selection-area">
-    <select id="heroSelect">
-      <option value="">-- Pilih Hero --</option>
-      <option>Alucard</option>
-      <option>Miya</option>
-      <option>Gusion</option>
-      <option>Chou</option>
-      <option>Lancelot</option>
-    </select>
+            <h4>Statistics:</h4>
 
-    <select id="rankFilter">
-      <option value="semua">Semuа</option>
-      <option value="epic">Epic</option>
-      <option value="legend">Legend</option>
-      <option value="mythic">Mythic</option>
-      <option value="honor">Mythical Honor</option>
-      <option value="glory">Mythical Glory+</option>
-    </select>
+            <div class="stat-row">
+                <span>Durability</span>
+                <div class="stat-bar"><div id="durBar"></div></div>
+                <span id="durVal"></span>
+            </div>
 
-    <button id="analyzeBtn">Mulai Analisis</button>
-  </div>
+            <div class="stat-row">
+                <span>Offense</span>
+                <div class="stat-bar"><div id="offBar"></div></div>
+                <span id="offVal"></span>
+            </div>
 
-  <!-- 🔹 Hasil Analisis -->
-  <div id="resultArea" class="hero-grid"></div>
+            <div class="stat-row">
+                <span>Ability Effects</span>
+                <div class="stat-bar"><div id="aeBar"></div></div>
+                <span id="aeVal"></span>
+            </div>
 
-  <script src="../js/analisis.js"></script>
-</body>
-</html>
+            <div class="stat-row">
+                <span>Difficulty</span>
+                <div class="stat-bar"><div id="diffBar"></div></div>
+                <span id="diffVal"></span>
+            </div>
+
+        </div>
+    </div>
+    <script src="../css/analisis.js"></script>
+
+    <button class="nav-btn right" onclick="nextHero()">&#10095;</button>
+</div>

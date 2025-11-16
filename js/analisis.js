@@ -1,42 +1,70 @@
+// ===============================
+// DATA HERO (SESUAI PERMINTAAN)
+// ===============================
 const heroes = [
-  { name: "Chou", role: "Fighter", rank: "epic", counterTo: ["Alucard", "Miya"], img: "https://upload.wikimedia.org/wikipedia/en/f/f7/Chou_Mobile_Legends.png" },
-  { name: "Khufra", role: "Tank", rank: "legend", counterTo: ["Gusion", "Lancelot"], img: "https://upload.wikimedia.org/wikipedia/en/2/23/Khufra_Mobile_Legends.png" },
-  { name: "Saber", role: "Assassin", rank: "mythic", counterTo: ["Gusion", "Harley"], img: "https://upload.wikimedia.org/wikipedia/en/e/e2/Saber_Mobile_Legends.png" },
-  { name: "Minsitthar", role: "Fighter", rank: "honor", counterTo: ["Lancelot"], img: "https://upload.wikimedia.org/wikipedia/en/9/9f/Minsitthar_Mobile_Legends.png" },
-  { name: "Franco", role: "Tank", rank: "glory", counterTo: ["Alucard", "Miya"], img: "https://upload.wikimedia.org/wikipedia/en/1/1f/Franco_Mobile_Legends.png" },
+    {
+        name: "Zetian",
+        role: "Mage • Damage • Crowd Control",
+        img: "zetian.png",
+        durability: 40,
+        offense: 80,
+        ability_effects: 70,
+        difficulty: 30
+    },
+    {
+        name: "Gusion",
+        role: "Assassin • Burst",
+        img: "gusion.png",
+        durability: 30,
+        offense: 90,
+        ability_effects: 55,
+        difficulty: 80
+    },
+    {
+        name: "Miya",
+        role: "Marksman • DPS",
+        img: "miya.png",
+        durability: 45,
+        offense: 75,
+        ability_effects: 30,
+        difficulty: 20
+    }
 ];
 
-// 🔹 Tombol Analisis
-document.getElementById("analyzeBtn").addEventListener("click", () => {
-  const selectedHero = document.getElementById("heroSelect").value;
-  const selectedRank = document.getElementById("rankFilter").value;
-  const resultArea = document.getElementById("resultArea");
+// ===============================
+// SYSTEM SLIDER
+// ===============================
+let current = 0;
 
-  if (!selectedHero) {
-    resultArea.innerHTML = `<p style="color:#0ef;">⚠️ Silakan pilih hero terlebih dahulu.</p>`;
-    return;
-  }
+function loadHero() {
+    const h = heroes[current];
 
-  // 🔸 Filter berdasarkan hero dan rank
-  let counters = heroes.filter(h => h.counterTo.includes(selectedHero));
-  if (selectedRank !== "semua") counters = counters.filter(h => h.rank === selectedRank);
+    document.getElementById("heroImg").src = h.img;
+    document.getElementById("heroName").innerText = h.name;
+    document.getElementById("heroRole").innerText = h.role;
 
-  // 🔸 Tampilkan hasil
-  if (counters.length === 0) {
-    resultArea.innerHTML = `<p style="color:#f55;">❌ Tidak ditemukan hero counter untuk rank tersebut.</p>`;
-    return;
-  }
+    // Statistik
+    document.getElementById("durBar").style.width = h.durability + "%";
+    document.getElementById("offBar").style.width = h.offense + "%";
+    document.getElementById("aeBar").style.width = h.ability_effects + "%";
+    document.getElementById("diffBar").style.width = h.difficulty + "%";
 
-  resultArea.innerHTML = counters.map(hero => `
-    <div class="hero-card">
-      <img src="${hero.img}" alt="${hero.name}" />
-      <h3>${hero.name}</h3>
-      <p>${hero.role} - Rank: ${hero.rank.toUpperCase()}</p>
-    </div>
-  `).join('');
-});
-
-// 🔹 Tombol Kembali
-function goBack() {
-  window.history.back();
+    // Angka persen
+    document.getElementById("durVal").innerText = h.durability + "%";
+    document.getElementById("offVal").innerText = h.offense + "%";
+    document.getElementById("aeVal").innerText = h.ability_effects + "%";
+    document.getElementById("diffVal").innerText = h.difficulty + "%";
 }
+
+function nextHero() {
+    current = (current + 1) % heroes.length;
+    loadHero();
+}
+
+function prevHero() {
+    current = (current - 1 + heroes.length) % heroes.length;
+    loadHero();
+}
+
+// Load hero pertama saat masuk
+loadHero();
