@@ -12,7 +12,6 @@ document.getElementById("diagnosaForm").addEventListener("submit", function (e) 
     critDmg: +document.getElementById("critDmg").value,
   };
 
-  // Contoh data hero
   const heroes = [
     { nama: "Alucard", physicalAtt: 9, magicPower: 1, physicalDef: 7, magicDef: 6, hp: 8, moveSpeed: 7, critChance: 8, critDmg: 9 },
     { nama: "Eudora", physicalAtt: 2, magicPower: 10, physicalDef: 3, magicDef: 6, hp: 5, moveSpeed: 6, critChance: 2, critDmg: 4 },
@@ -21,7 +20,7 @@ document.getElementById("diagnosaForm").addEventListener("submit", function (e) 
     { nama: "Kagura", physicalAtt: 3, magicPower: 9, physicalDef: 4, magicDef: 7, hp: 6, moveSpeed: 7, critChance: 3, critDmg: 5 }
   ];
 
-  // Hitung kecocokan
+  
   heroes.forEach(h => {
     let total = 0;
     let atribut = Object.keys(data).length;
