@@ -39,8 +39,10 @@ nav a.active, nav a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 80px;
-  background: url('mlbb_bg.jpg') no-repeat center center/cover;
+  background: url("../assets/bg_mlbb.jpg") no-repeat center center / cover;
+;
 }
+
 
 .hero h1 {
   color: #00d9ff;
