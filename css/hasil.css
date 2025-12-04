@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0d0d0f;
+    padding: 40px;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    color: #ff4fc8;
+    text-shadow: 0 0 10px #ff4fc8;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* CARD UTAMA */
+.result-card {
+    background: #111;
+    border: 2px solid #ff4fc8;
+    box-shadow: 0 0 25px #ff4fc87a;
+    padding: 30px;
+    border-radius: 18px;
+    margin-top: 20px;
+}
+
+/* LAYOUT GRID 3 KOLOM */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* BOX DALAM GRID */
+.box {
+    border: 2px solid #ff4fc8;
+    background: #1a1a1d;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 0 12px #ff4fc877 inset;
+}
+
+.box h3 {
+    margin-bottom: 14px;
+    font-size: 22px;
+    color: #ff8dde;
+    text-shadow: 0 0 10px #ff4fc8;
+}
+
+.hero-list {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffd7f5;
+    font-weight: 600;
+}
+
+.rules {
+    font-size: 18px;
+    color: #ffe2fb;
+    line-height: 1.5;
+}
+
+.facts {
+    background: #000;
+    padding: 15px;
+    border-radius: 10px;
+    color: #ffb4eb;
+    font-size: 14px;
+    overflow-x: auto;
+    box-shadow: 0 0 10px #ff4fc8 inset;
+}
+
+/* TOMBOL BACK */
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 20px;
+    background: #ff4fc8;
+    color: #000;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 15px #ff4fc8;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #ff86d8;
+    box-shadow: 0 0 25px #ff86d8;
+}
