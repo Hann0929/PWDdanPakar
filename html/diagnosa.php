@@ -25,7 +25,7 @@ $koneksi = $conn;
             <li><a href="beranda.php">BERANDA</a></li>
             <li><a href="informasi.php">INFORMASI</a></li>
             <li><a href="diagnosa.php" class="active">DIAGNOSA</a></li>
-            <li><a href="analisis.php">ANALISIS</a></li>
+            <li><a href="list-hero.php">LIST HERO</a></li>
         </ul>
 
         <a href="../login.php" class="nav-login">LOGIN</a>
@@ -94,7 +94,7 @@ $koneksi = $conn;
 
     <!-- RIGHT SIDE IMAGE -->
     <div class="character-box">
-        <img src="../assets/char.png" alt="Karakter">
+        <img src="../assets/fanny.png" alt="Karakter">
     </div>
 
 </div>

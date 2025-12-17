@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+
 include "db/koneksi.php";
 ?>
 <!DOCTYPE html>
@@ -14,7 +21,6 @@ include "db/koneksi.php";
 
 <body>
 
-  <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">
       <img src="../assets/logo.png" alt="logo">
@@ -25,12 +31,11 @@ include "db/koneksi.php";
       <a class="active">BERANDA</a>
       <a href="informasi.php">INFORMASI</a>
       <a href="diagnosa.php">DIAGNOSA</a>
-      <a href="analisis.php">ANALISIS</a>
+      <a href="list-hero.php">LIST HERO</a>
       <a href="login.php" class="login-border">LOGIN</a>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-left">
       <h1>
@@ -40,8 +45,7 @@ include "db/koneksi.php";
       </h1>
 
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.
+       berbagai informasi lengkap mengenai hero MLBB, mulai dari role, kemampuan dasar, hingga gaya bermain yang cocok untuk setiap hero.
       </p>
 
       <a href="diagnosa.php" class="btn-try">LET’S TRY</a>
@@ -54,11 +58,10 @@ include "db/koneksi.php";
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
   <section class="why">
     <h2>WHY <span class="pink">CHOOSE US?</span></h2>
     <p class="why-desc">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+      MyHero membantu pemain Mobile Legends memilih hero terbaik sesuai gaya bermain, role favorit, dan tingkat pengalaman. Tidak perlu bingung lagi saat draft atau push rank.
     </p>
 
     <div class="why-cards">
@@ -82,7 +85,6 @@ include "db/koneksi.php";
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-top">
       <span class="brand">+ MyHero</span>
@@ -99,5 +101,4 @@ include "db/koneksi.php";
   </footer>
 
 </body>
-
 </html>

@@ -80,12 +80,12 @@ body {
   font-size: 56px;
   font-weight: 800;
   line-height: 1.15;
-  text-shadow: 0 0 20px #ff2ebd;
+  text-shadow: 0 0 2px #ff2ebd;
 }
 
 .here {
   font-size: 62px !important;
-  text-shadow: 0 0 25px #32e0ff;
+  text-shadow: 0 0 2px #32e0ff;
 }
 
 .hero-left p {
@@ -105,18 +105,18 @@ body {
   text-decoration: none;
   color: white;
   border-radius: 8px;
-  box-shadow: 0 0 25px #ff2ebd;
+  box-shadow: 0 0 2px #ff2ebd;
   transition: .3s;
 }
 .btn-try:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 35px #32e0ff;
+  box-shadow: 0 0 3px #32e0ff;
 }
 
 /* HERO IMAGE */
 .hero-right img {
   width: 500px;
-  filter: drop-shadow(0 0 35px #32e0ff) drop-shadow(0 0 55px #ff2ebd);
+  filter: drop-shadow(0 0 10px #32e0ff) drop-shadow(0 0 55px #ff2ebd);
   animation: float 4s ease-in-out infinite;
 }
 
@@ -135,7 +135,7 @@ body {
 .why h2 {
   font-size: 40px;
   font-weight: 700;
-  text-shadow: 0 0 15px #ff2ebd;
+  text-shadow: 0 0 2px #ff2ebd;
 }
 
 .why-desc {
@@ -156,17 +156,17 @@ body {
   padding: 30px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 25px #0ac8ff33;
+  box-shadow: 0 0 2px #0ac8ff33;
   transition: .3s;
 }
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 40px #32e0ff77;
+  box-shadow: 0 0 4px #32e0ff77;
 }
 
 .card img {
   width: 140px;
-  filter: drop-shadow(0 0 20px #32e0ff);
+  filter: drop-shadow(0 0 2px #32e0ff);
 }
 
 .card h3 {
@@ -190,7 +190,7 @@ body {
 
 .brand {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 700; 
   color: #ff2ebd;
 }
 
