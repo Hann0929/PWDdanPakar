@@ -1,26 +1,30 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Login | MyHero</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <title>Login</title>
 </head>
 <body>
 
-<div class="login-box">
-    <h2>MyHero Login</h2>
+<h2>Login</h2>
 
-    <form action="login_proses.php" method="POST" onsubmit="return validasi()">
-        <input type="text" id="username" name="username" placeholder="Username">
-        <input type="password" id="password" name="password" placeholder="Password">
-        <button type="submit">Login</button>
-    </form>
+<?php
+if (isset($_GET['error'])) {
+    if ($_GET['error'] == '1' || $_GET['error'] == 'user') {
+        echo "<p style='color:red'>Username atau Password salah</p>";
+    } elseif ($_GET['error'] == 'kosong') {
+        echo "<p style='color:red'>Username / Password kosong</p>";
+    }
+}
+?>
 
-    <?php if(isset($_GET['error'])): ?>
-        <p class="error">Username atau Password salah!</p>
-    <?php endif; ?>
-</div>
+<form method="POST" action="login_proses.php">
+    <input type="text" name="username" placeholder="Username" required>
+    <br><br>
+    <input type="password" name="password" placeholder="Password" required>
+    <br><br>
+    <button type="submit">Login</button>
+</form>
 
-<script src="../js/login.js"></script>
 </body>
 </html>

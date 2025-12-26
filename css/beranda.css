@@ -28,18 +28,21 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
-.logo img {
-  width: 42px;
+
+.logo-icon {
+    color: #00eaff;
+    font-size: 22px;
 }
-.logo span {
-  font-size: 22px;
-  font-weight: 700;
-  color: #ff2ebd;
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ff4fd8;
 }
 
 .navbar nav {
@@ -116,7 +119,7 @@ body {
 /* HERO IMAGE */
 .hero-right img {
   width: 500px;
-  filter: drop-shadow(0 0 10px #32e0ff) drop-shadow(0 0 55px #ff2ebd);
+  filter: drop-shadow(0 0 10px #32e0ff) drop-shadow(0 0 15px #ff2ebd);
   animation: float 4s ease-in-out infinite;
 }
 

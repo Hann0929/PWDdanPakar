@@ -1,11 +1,5 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['login'])) {
-    header("Location: login.php");
-    exit;
-}
-
 include "db/koneksi.php";
 ?>
 <!DOCTYPE html>
@@ -22,14 +16,13 @@ include "db/koneksi.php";
 <body>
 
   <header class="navbar">
-    <div class="logo">
-      <img src="../assets/logo.png" alt="logo">
-      <span>MyHERO</span>
-    </div>
+    <div class="nav-logo">
+            <span class="logo-icon">✦</span>
+            <span class="logo-text">MyHERO</span>
+        </div>
 
     <nav>
       <a class="active">BERANDA</a>
-      <a href="informasi.php">INFORMASI</a>
       <a href="diagnosa.php">DIAGNOSA</a>
       <a href="list-hero.php">LIST HERO</a>
       <a href="login.php" class="login-border">LOGIN</a>
