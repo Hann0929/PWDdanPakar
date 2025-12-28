@@ -54,26 +54,25 @@ include "db/koneksi.php";
   <section class="why">
     <h2>WHY <span class="pink">CHOOSE US?</span></h2>
     <p class="why-desc">
-      MyHero membantu pemain Mobile Legends memilih hero terbaik sesuai gaya bermain, role favorit, dan tingkat pengalaman. Tidak perlu bingung lagi saat draft atau push rank.
-    </p>
+      Sering bingung memilih hero saat draft pick? MyHero hadir sebagai asisten pribadi yang menganalisis gaya bermainmu secara objektif untuk memberikan rekomendasi hero terbaik di setiap situasi
 
     <div class="why-cards">
       <div class="card">
         <img src="../assets/selena2.png">
         <h3>KELEBIHAN 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Menggunakan metode Forward Chaining untuk memberikan rekomendasi hero yang paling akurat berdasarkan ribuan kombinasi data rule.</p>
       </div>
 
       <div class="card">
         <img src="../assets/selena2.png">
         <h3>KELEBIHAN 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Sistem kami menganalisis preferensi mekanisme kamu, mulai dari tingkat kesulitan (durability/offense) hingga peran spesifik dalam tim.</p>
       </div>
 
       <div class="card">
         <img src="../assets/selena2.png">
         <h3>KELEBIHAN 3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Database hero yang selalu diperbarui mengikuti perkembangan patch terbaru di Mobile Legends: Bang Bang.</p>
       </div>
     </div>
   </section>
