@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['jawaban'])) {
     $triggeredRules = [];
     $recommendedHeroes = [];
 
-    // Ambil semua rule dari rule_base
+    // Ambil rule dari rule_base
     $query_rules = "SELECT rule_id, rule_name FROM rule_base";
     $result_rules = mysqli_query($conn, $query_rules);
 
@@ -26,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['jawaban'])) {
         $rule_id = $rule['rule_id'];
         $rule_name = $rule['rule_name'];
 
-        // Ambil syarat untuk rule tersebut
         $query_conditions = "
             SELECT g.attribute_key, rc.expected_value 
             FROM rule_condition rc
@@ -52,11 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['jawaban'])) {
             $isMatch = false;
         }
 
-        // Jika Rule Terpenuhi (Forward Chaining)
+        // Forward Chaining
         if ($isMatch) {
             $triggeredRules[] = $rule_name; 
             
-            // Ambil nama dan file gambar hero
+
             $query_heroes = "
                 SELECT h.name, h.image 
                 FROM rule_conclusion rcon
@@ -65,13 +64,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['jawaban'])) {
             ";
             $result_heroes = mysqli_query($conn, $query_heroes);
             while ($h = mysqli_fetch_assoc($result_heroes)) {
-                // Simpan detail hero ke dalam array
+                
                 $hero_data = [
                     'name' => $h['name'],
                     'image' => $h['image']
                 ];
                 
-                // Hindari duplikasi hero
+               
                 if (!in_array($hero_data, $recommendedHeroes)) {
                     $recommendedHeroes[] = $hero_data;
                 }
@@ -79,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['jawaban'])) {
         }
     }
 
-    // Simpan ke session sesuai kebutuhan hasil.php
+   
     $_SESSION['jawaban'] = $userAnswers;
     $_SESSION['diagnosa'] = [
         'triggered_rules' => $triggeredRules,

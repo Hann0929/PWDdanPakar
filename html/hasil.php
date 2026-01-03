@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Perbaikan: Cek 'username' atau 'login' agar sinkron dengan login_proses.php
 if (!isset($_SESSION['username']) || !isset($_SESSION['login'])) {
     header("Location: login.php");
     exit;

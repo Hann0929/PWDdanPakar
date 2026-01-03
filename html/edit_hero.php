@@ -8,12 +8,11 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
     exit;
 }
 
-// Ambil ID dari link yang diklik di dashboard
 $id = $_GET['id'];
 $query = mysqli_query($conn, "SELECT * FROM hero WHERE hero_id = '$id'");
 $data = mysqli_fetch_assoc($query);
 
-// Jika ID tidak ada di database
+
 if (!$data) {
     echo "<script>alert('Data tidak ditemukan!'); window.location='dashboard-admin.php';</script>";
     exit;

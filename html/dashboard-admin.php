@@ -2,6 +2,7 @@
 session_start();
 include "db/koneksi.php";
 
+// Proteksi akses: Hanya admin yang boleh masuk
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
     exit;
@@ -13,13 +14,17 @@ $result_hero = mysqli_query($conn, "SELECT * FROM hero ORDER BY hero_id DESC");
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="../css/hasil.css">
-    <link rel="stylesheet" href="../css/admin.css">
-</head>
-<body>
+    <title>Admin Dashboard - MyHERO</title>
+    <link rel="stylesheet" href="../css/admin.css"> </head>
+<body style="background: #000;">
     <div class="admin-container">
-        <h1>Dashboard Admin - Kelola Hero</h1>
+        <div class="admin-header">
+            <h1>Dashboard Admin</h1>
+            <div class="nav-actions">
+                <a href="diagnosa.php" class="btn-back">← KEMBALI KE DIAGNOSA</a>
+                <a href="logout.php" class="btn btn-logout">LOGOUT</a>
+            </div>
+        </div>
         
         <div class="form-box">
             <h3>Tambah Hero Baru</h3>
@@ -59,8 +64,6 @@ $result_hero = mysqli_query($conn, "SELECT * FROM hero ORDER BY hero_id DESC");
                 <?php endwhile; ?>
             </tbody>
         </table>
-        <br>
-        <a href="logout.php" class="back-btn">Logout</a>
     </div>
 </body>
 </html>

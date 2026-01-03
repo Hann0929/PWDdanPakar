@@ -1,33 +1,28 @@
 <?php
 session_start();
-include "db/koneksi.php";
+include "db/koneksi.php"; // Pastikan path ke file koneksi benar
 
-$username = mysqli_real_escape_string($conn, $_POST['username']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
+$username = $_POST['username'];
+$password = $_POST['password'];
 
+// Menggunakan variabel $conn dari file koneksi kamu
 $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username' AND password='$password'");
+$cek = mysqli_num_rows($query);
 
-if (mysqli_num_rows($query) > 0) {
+if ($cek > 0) {
     $data = mysqli_fetch_assoc($query);
-    
-    $_SESSION['login'] = true;
-    $_SESSION['username'] = $data['username'];
-    $_SESSION['role'] = $data['role'];
 
-    // LOGIKA PENGALIHAN PINTAR:
-    // 1. Cek apakah ada permintaan halaman tertentu (seperti diagnosa.php)
-    if (isset($_SESSION['redirect_after_login'])) {
-        $destination = $_SESSION['redirect_after_login'];
-        unset($_SESSION['redirect_after_login']); // Hapus agar tidak tersimpan terus
-        header("Location: " . $destination);
-    } 
-    // 2. Jika tidak ada, baru cek Role
-    else if ($data['role'] == 'admin') {
-        header("Location: dashboard-admin.php");
+    $_SESSION['username'] = $data['username'];
+    $_SESSION['role'] = $data['role']; 
+    $_SESSION['status'] = "login";
+
+    // Arahkan berdasarkan role yang ada di database
+    if ($data['role'] == "admin") {
+        header("location: dashboard-admin.php"); 
     } else {
-        header("Location: beranda.php");
+        header("location: diagnosa.php");
     }
 } else {
-    header("Location: login.php?error=1");
+    header("location: login.php?error=1");
 }
 ?>
